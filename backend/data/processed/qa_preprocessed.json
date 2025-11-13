@@ -1,0 +1,204 @@
+[
+  {
+    "id": "qa_001",
+    "question": "Perso.ai는 어떤 서비스인가요?",
+    "answer": "Perso.ai는 이스트소프트가 개발한 다국어 AI 영상 더빙 플랫폼으로, 누구나 언어의 장벽 없이 영상을 제작하고 공유할 수 있도록 돕는 AI SaaS 서비스입니다.",
+    "category": "서비스 소개",
+    "metadata": {
+      "answer_length": 93,
+      "keywords": [
+        "AI",
+        "이스트소프트",
+        "다국어",
+        "더빙",
+        "Perso.ai",
+        "영상"
+      ],
+      "created_at": "2025-11-13T19:42:44.890431"
+    }
+  },
+  {
+    "id": "qa_002",
+    "question": "Perso.ai의 주요 기능은 무엇인가요?",
+    "answer": "Perso.ai는 AI 음성 합성, 립싱크, 영상 더빙 기능을 제공합니다. 사용자는 원본 영상에 다른 언어로 음성을 입히거나, 입 모양까지 자동으로 동기화할 수 있습니다.",
+    "category": "서비스 소개",
+    "metadata": {
+      "answer_length": 95,
+      "keywords": [
+        "AI",
+        "음성",
+        "립싱크",
+        "더빙",
+        "Perso.ai",
+        "영상"
+      ],
+      "created_at": "2025-11-13T19:42:44.890465"
+    }
+  },
+  {
+    "id": "qa_003",
+    "question": "Perso.ai는 어떤 기술을 사용하나요?",
+    "answer": "Perso.ai는 ElevenLabs, Microsoft, Google Cloud Speech API 등과 같은 글로벌 기술 파트너의 음성합성 및 번역 기술을 활용하며, 자체 개발한 립싱크 엔진을 결합합니다.",
+    "category": "기술 상세",
+    "metadata": {
+      "answer_length": 116,
+      "keywords": [
+        "음성",
+        "Perso.ai",
+        "립싱크",
+        "AI"
+      ],
+      "created_at": "2025-11-13T19:42:44.890492"
+    }
+  },
+  {
+    "id": "qa_004",
+    "question": "Perso.ai의 사용자는 어느 정도인가요?",
+    "answer": "2025년 기준, 전 세계 누적 20만 명 이상의 사용자가 Perso.ai를 통해 AI 기반 영상 제작을 경험했습니다.",
+    "category": "사용자 정보",
+    "metadata": {
+      "answer_length": 66,
+      "keywords": [
+        "Perso.ai",
+        "영상",
+        "AI"
+      ],
+      "created_at": "2025-11-13T19:42:44.890510"
+    }
+  },
+  {
+    "id": "qa_005",
+    "question": "Perso.ai를 사용하는 주요 고객층은 누구인가요?",
+    "answer": "유튜버, 강의 제작자, 기업 마케팅 담당자 등 영상 콘텐츠를 다국어로 확장하려는 개인 및 기업 고객이 주요 타깃입니다.",
+    "category": "서비스 소개",
+    "metadata": {
+      "answer_length": 66,
+      "keywords": [
+        "Perso.ai",
+        "영상",
+        "AI",
+        "다국어"
+      ],
+      "created_at": "2025-11-13T19:42:44.890529"
+    }
+  },
+  {
+    "id": "qa_006",
+    "question": "Perso.ai에서 지원하는 언어는 몇 개인가요?",
+    "answer": "현재 30개 이상의 언어를 지원하며, 한국어, 영어, 일본어, 스페인어, 포르투갈어 등 주요 언어가 포함됩니다.",
+    "category": "서비스 소개",
+    "metadata": {
+      "answer_length": 62,
+      "keywords": [
+        "Perso.ai",
+        "AI"
+      ],
+      "created_at": "2025-11-13T19:42:44.890546"
+    }
+  },
+  {
+    "id": "qa_007",
+    "question": "Perso.ai의 요금제는 어떻게 구성되어 있나요?",
+    "answer": "Perso.ai는 사용량 기반 구독 모델을 운영합니다. Free, Creator, Pro, Enterprise 플랜이 있으며 Stripe를 통해 결제할 수 있습니다.",
+    "category": "기술 상세",
+    "metadata": {
+      "answer_length": 92,
+      "keywords": [
+        "Perso.ai",
+        "AI"
+      ],
+      "created_at": "2025-11-13T19:42:44.890566"
+    }
+  },
+  {
+    "id": "qa_008",
+    "question": "Perso.ai는 어떤 기업이 개발했나요?",
+    "answer": "Perso.ai는 소프트웨어 기업 이스트소프트(ESTsoft)가 개발했습니다.",
+    "category": "사용자 정보",
+    "metadata": {
+      "answer_length": 43,
+      "keywords": [
+        "Perso.ai",
+        "AI",
+        "ESTsoft",
+        "이스트소프트"
+      ],
+      "created_at": "2025-11-13T19:42:44.890582"
+    }
+  },
+  {
+    "id": "qa_009",
+    "question": "이스트소프트는 어떤 회사인가요?",
+    "answer": "이스트소프트는 1993년에 설립된 IT 기업으로, 알집, 알약, 알씨 등 생활형 소프트웨어로 잘 알려져 있으며, 최근에는 인공지능 기반 서비스 개발에 집중하고 있습니다.",
+    "category": "서비스 소개",
+    "metadata": {
+      "answer_length": 94,
+      "keywords": [
+        "이스트소프트"
+      ],
+      "created_at": "2025-11-13T19:42:44.890600"
+    }
+  },
+  {
+    "id": "qa_010",
+    "question": "Perso.ai의 기술적 강점은 무엇인가요?",
+    "answer": "AI 음성 합성과 립싱크 정확도가 높고, 다국어 영상 제작이 간편하며, 실제 사용자 인터페이스가 직관적이라는 점이 강점입니다.",
+    "category": "사용자 정보",
+    "metadata": {
+      "answer_length": 70,
+      "keywords": [
+        "AI",
+        "다국어",
+        "음성",
+        "립싱크",
+        "Perso.ai",
+        "영상"
+      ],
+      "created_at": "2025-11-13T19:42:44.890618"
+    }
+  },
+  {
+    "id": "qa_011",
+    "question": "Perso.ai를 사용하려면 회원가입이 필요한가요?",
+    "answer": "네, 이메일 또는 구글 계정으로 간단히 회원가입 후 서비스를 이용할 수 있습니다.",
+    "category": "서비스 소개",
+    "metadata": {
+      "answer_length": 45,
+      "keywords": [
+        "Perso.ai",
+        "AI"
+      ],
+      "created_at": "2025-11-13T19:42:44.890633"
+    }
+  },
+  {
+    "id": "qa_012",
+    "question": "Perso.ai를 이용하려면 영상 편집 지식이 필요한가요?",
+    "answer": "아니요. Perso.ai는 누구나 쉽게 사용할 수 있도록 설계되어 있어, 영상 편집 경험이 없어도 바로 더빙을 시작할 수 있습니다.",
+    "category": "사용 가이드",
+    "metadata": {
+      "answer_length": 73,
+      "keywords": [
+        "Perso.ai",
+        "영상",
+        "더빙",
+        "AI"
+      ],
+      "created_at": "2025-11-13T19:42:44.890654"
+    }
+  },
+  {
+    "id": "qa_013",
+    "question": "Perso.ai 고객센터는 어떻게 문의하나요?",
+    "answer": "Perso.ai 웹사이트 하단의 ‘문의하기’ 버튼을 통해 이메일 또는 채팅으로 고객센터에 문의할 수 있습니다.",
+    "category": "사용자 정보",
+    "metadata": {
+      "answer_length": 61,
+      "keywords": [
+        "Perso.ai",
+        "AI"
+      ],
+      "created_at": "2025-11-13T19:42:44.890673"
+    }
+  }
+]
