@@ -1,6 +1,6 @@
 .env
 .venv
-chroma_db/
+# chroma_db/  # Railway 배포를 위해 주석 처리 (ChromaDB 데이터 포함)
 **/__pycache__
 *.xlsx
 
