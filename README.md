@@ -148,20 +148,39 @@ results = vector_db.search(query_embedding, top_k=3)
 
 ## 📁 프로젝트 구조
 
+```
 est_assignment/
-├── main.py                # FastAPI 서버 실행 엔트리포인트
-├── backend/
-│   ├── app/
-│   │   ├── routes/
-│   │   │   └── rag_router.py
-│   │   ├── model/
-│   │   │   ├── step1_preprocess.py
-│   │   │   └── step2_embedding.py
-│   │   ├── chroma_db/    # 생성되는 VectorDB (자동 생성)
-│   │   └── data/
-│   │       ├── raw/
-│   │       │   └── Q&A.xlsx
-│   │       └── processed/
-│   │           ├── qa_preprocessed.json
-│   │           └── qa_preprocessed.csv
-└── README.md
+├── main.py                    # FastAPI 메인 애플리케이션 진입점   
+├── backend/                    # 백엔드 (Python/FastAPI)
+│   ├── app/                   
+│   │   ├── model/             
+│   │   │   ├── step1_preprocess.py    # 데이터 전처리 (Q&A 데이터 정제)
+│   │   │   └── step2_embedding.py     # 임베딩 생성 및 ChromaDB 저장
+│   │   └── routes/            
+│   │       └── rag_router.py   # RAG 쿼리 엔드포인트 (/rag/query)
+│   ├── data/                  
+│   │   ├── raw/               
+│   │   │   └── Q&A.xlsx       # 원본 Q&A 엑셀 파일
+│   │   └── processed/          # 전처리된 데이터
+│   │       ├── qa_preprocessed.csv
+│   │       └── qa_preprocessed.json
+│   │
+│   └── chroma_db/   
+├── README.md                   
+└── frontend/                   # 프론트엔드 (React/TypeScript/Vite)
+    ├── index.html              
+    ├── public/                  
+    │
+    └── src/                    
+        ├── main.tsx            
+        ├── App.tsx            
+        ├── components/         
+        │   └── Chat.tsx       
+        ├── styles/             
+        │   ├── index.css      
+        │   ├── App.css        
+        │   └── Chat.css       
+        │
+        └── assets/            
+```
+
