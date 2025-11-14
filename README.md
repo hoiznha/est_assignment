@@ -147,7 +147,7 @@ results = vector_db.search(query_embedding, top_k=3)
 - 메모리 효율적 처리로 안정성 향상
 
 ## 📁 프로젝트 구조
-
+```bash
 est_assignment/
 ├── main.py                # FastAPI 서버 실행 엔트리포인트
 ├── backend/
@@ -165,3 +165,4 @@ est_assignment/
 │   │           ├── qa_preprocessed.json
 │   │           └── qa_preprocessed.csv
 └── README.md
+
