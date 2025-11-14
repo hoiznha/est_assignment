@@ -149,6 +149,7 @@ results = vector_db.search(query_embedding, top_k=3)
 ## 📁 프로젝트 구조
 
 ```
+```bash
 est_assignment/
 ├── main.py                    # FastAPI 메인 애플리케이션 진입점   
 ├── backend/                    # 백엔드 (Python/FastAPI)
@@ -183,4 +184,5 @@ est_assignment/
         │
         └── assets/            
 ```
+
 
