@@ -8,7 +8,8 @@ interface Message {
   similarity?: number
 }
 
-const API_BASE_URL = 'http://localhost:8000'
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+
 
 function Chat() {
   const [messages, setMessages] = useState<Message[]>([])
@@ -47,7 +48,7 @@ function Chat() {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
         content: data.best_answer || '답변을 생성할 수 없습니다.',
-        similarity: data.similarity,
+        // similarity: data.similarity,
       }
 
       setMessages((prev) => [...prev, assistantMessage])
@@ -89,11 +90,11 @@ function Chat() {
           <div key={message.id} className={`message ${message.role}`}>
             <div className="message-content">
               <div className="message-text">{message.content}</div>
-              {message.role === 'assistant' && message.similarity && (
+              {/* {message.role === 'assistant' && message.similarity && (
                 <div className="similarity-badge">
                   유사도: {(message.similarity * 100).toFixed(1)}%
                 </div>
-              )}
+              )} */}
             </div>
           </div>
         ))}
