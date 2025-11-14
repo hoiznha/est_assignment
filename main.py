@@ -19,8 +19,8 @@ allowed_origins = [origin for origin in allowed_origins if origin]
 # CORS 설정
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=allowed_origins,
-    allow_credentials=False,
+    allow_origins=["*"],
+    # allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
