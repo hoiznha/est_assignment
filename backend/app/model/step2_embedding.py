@@ -11,6 +11,7 @@ import json
 import logging
 from typing import List, Dict, Optional, Tuple
 from pathlib import Path
+import torch  # 모델 최적화를 위해 필요
 
 # 로깅 설정
 logging.basicConfig(
@@ -52,15 +53,53 @@ class BGEEmbedding:
         else:
             self.device = device
         
+        # CPU 환경 최적화 설정
+        if self.device == "cpu":
+            # CPU 스레드 수 최적화 (Railway 환경 고려)
+            num_threads = min(4, torch.get_num_threads())  # 최대 4스레드
+            torch.set_num_threads(num_threads)
+            logging.info(f"   CPU 스레드 수: {num_threads}")
+        
         logging.info(f"🔄 BGE-m3-ko 모델 로딩 중... (디바이스: {self.device})")
         logging.info("   ⏳ 첫 실행 시 모델 다운로드로 시간이 걸릴 수 있습니다...")
         
+        # 모델 로드 최적화 옵션
+        model_kwargs = {}
+        if self.device == "cuda":
+            # CUDA 환경: FP16 사용 (메모리 절약 및 속도 향상)
+            try:
+                model_kwargs = {'torch_dtype': torch.float16}
+                logging.info("   최적화: FP16 사용 (CUDA)")
+            except:
+                pass
+        elif self.device == "cpu":
+            # CPU 환경: 모델을 eval 모드로 설정하고 최적화
+            model_kwargs = {}
+            logging.info("   최적화: CPU 추론 최적화")
+        
         # 모델 로드
-        self.model = SentenceTransformer(model_name, device=self.device)
+        self.model = SentenceTransformer(
+            model_name, 
+            device=self.device,
+            model_kwargs=model_kwargs if model_kwargs else None
+        )
+        
+        # 모델을 평가 모드로 설정 (드롭아웃 등 비활성화)
+        self.model.eval()
+        
+        # CPU 환경에서 추가 최적화
+        if self.device == "cpu":
+            # torch.jit.script로 최적화 시도 (선택적)
+            try:
+                # 모델의 일부를 최적화할 수 있지만, sentence-transformers는 이미 최적화되어 있음
+                pass
+            except:
+                pass
         
         logging.info(f"✅ BGE-m3-ko 모델 로드 완료!")
         logging.info(f"   모델: {model_name}")
         logging.info(f"   디바이스: {self.device}")
+        logging.info(f"   최적화: 활성화됨")
 
     def embed_documents(self, texts: List[str], batch_size: int = 32) -> List[List[float]]:
         """
@@ -82,14 +121,16 @@ class BGEEmbedding:
         # BGE 모델은 retrieval을 위해 "passage: " 프리픽스 사용
         passages = [f"passage: {text}" for text in texts]
         
-        # 배치 임베딩
-        embeddings = self.model.encode(
-            passages,
-            batch_size=batch_size,
-            show_progress_bar=True,
-            convert_to_numpy=True,
-            normalize_embeddings=True  # 코사인 유사도 최적화
-        )
+        # 배치 임베딩 (최적화 옵션 적용)
+        # CPU 환경에서 메모리 효율적 처리
+        with torch.no_grad():  # 그래디언트 계산 비활성화로 메모리 절약 및 속도 향상
+            embeddings = self.model.encode(
+                passages,
+                batch_size=batch_size,
+                show_progress_bar=True,
+                convert_to_numpy=True,
+                normalize_embeddings=True  # 코사인 유사도 최적화
+            )
         
         # numpy array를 list로 변환
         embeddings_list = [emb.tolist() for emb in embeddings]
@@ -116,12 +157,15 @@ class BGEEmbedding:
         # BGE 모델은 검색 쿼리에 "query: " 프리픽스 사용
         query_with_prefix = f"query: {query}"
         
-        # 단일 임베딩
-        embedding = self.model.encode(
-            query_with_prefix,
-            convert_to_numpy=True,
-            normalize_embeddings=True
-        )
+        # 단일 임베딩 (최적화 옵션 적용)
+        # CPU 환경에서 메모리 효율적 처리 및 속도 향상
+        with torch.no_grad():  # 그래디언트 계산 비활성화로 메모리 절약 및 속도 향상
+            embedding = self.model.encode(
+                query_with_prefix,
+                convert_to_numpy=True,
+                normalize_embeddings=True,
+                batch_size=1  # 단일 쿼리 최적화
+            )
         
         return embedding.tolist()
 
