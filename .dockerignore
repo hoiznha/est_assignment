@@ -19,4 +19,13 @@ frontend
 *.log
 chroma_db/
 *.xlsx
+# 추가 최적화: 불필요한 파일 제외
+*.md
+README*
+.git
+.vscode
+.idea
+*.swp
+*.swo
+*~
 

@@ -4,7 +4,8 @@ uvicorn[standard]>=0.24.0
 
 # 임베딩 모델
 sentence-transformers>=2.2.0
-torch>=2.0.0
+# PyTorch는 Dockerfile에서 CPU-only 버전으로 별도 설치
+# (CUDA 제거로 이미지 크기 대폭 감소)
 
 # 벡터 데이터베이스
 chromadb>=0.4.0
