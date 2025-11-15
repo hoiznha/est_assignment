@@ -1,6 +1,6 @@
 # Perso.ai RAG Chatbot
 
-Perso.ai 서비스에 대한 질문에 답변하는 RAG(Retrieval-Augmented Generation) 기반 챗봇입니다.
+Perso.ai 서비스에 대한 질문에 답변하는 RAG(Retrieval-Augmented Generation) 기반 챗봇입니다.  
 **최종 서비스 URL**: https://est-assignment.vercel.app/
 
 ## 📋 프로젝트 개요
